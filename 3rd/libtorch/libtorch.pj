@@ -1,6 +1,6 @@
 @=
-projectName="libtorch";
 projectType="library";
+projectName="libtorch";
 projectGUID="2AD270F1-A9FE-430B-B592-4CE992719DDB";
 addIncDirs=[ CGV_DIR."/3rd/libtorch/include" ];
 addLibDirs=[ INPUT_DIR."/lib" ];
