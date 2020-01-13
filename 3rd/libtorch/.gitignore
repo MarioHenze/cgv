@@ -1,0 +1,7 @@
+# At first ignore everything in this folder
+*
+
+# Whitelist only the following
+!.gitignore
+!get_prebuilt.ps1
+!libtorch.pj
