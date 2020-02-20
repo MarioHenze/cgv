@@ -2,6 +2,6 @@
 projectType="library";
 projectName="libtorch";
 projectGUID="2AD270F1-A9FE-430B-B592-4CE992719DDB";
-addIncDirs=[ CGV_DIR."/3rd/libtorch/include" ];
+addIncDirs=[ [CGV_DIR."/3rd/libtorch/include", "all"] ];
 addLibDirs=[ INPUT_DIR."/lib" ];
-addDependencies=[ "c10", "caffe2_detectron_ops", "caffe2_module_test_dynamic", "clog", "cpuinfo", "libiomp5md", "libiompstubs5md", "libprotobuf", "libprotobuf-lite", "libprotoc", "torch" ];
+addDependencies=[ "c10", "caffe2_module_test_dynamic", "clog", "cpuinfo", "libprotobufd", "libprotobuf-lited", "libprotocd", "torch" ];
