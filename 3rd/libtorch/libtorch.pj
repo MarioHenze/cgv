@@ -1,8 +1,10 @@
 @=
-projectType="plugin";
+projectType="shared_library";
 projectName="libtorch";
 projectGUID="2AD270F1-A9FE-430B-B592-4CE992719DDB";
-addIncDirs=[ CGV_DIR."/3rd/libtorch/include" ];
-addLibDirs=[ INPUT_DIR."/lib" ];
-addMapDeps= [ "libtorch", ["torchlib", "torchlib", "torchlib", "torchlib"] ];
-addDependencies=[ "torch" ];
+addIncDirs=[ CGV_DIR."/3rd/libtorch/dist/libtorch/include/torch/csrc/api/include", CGV_DIR."/3rd/libtorch/dist/libtorch/include", CGV_DIR."/3rd/libtorch/src/include" ];
+excludeSourceDirs=[ CGV_DIR."/3rd/libtorch/dist/libtorch/bin", CGV_DIR."/3rd/libtorch/dist/libtorch/cmake", CGV_DIR."/3rd/libtorch/dist/libtorch/lib", CGV_DIR."/3rd/libtorch/dist/libtorch/share", CGV_DIR."/3rd/libtorch/dist/libtorch/test" ];
+excludeSourceFiles=[ CGV_DIR."/3rd/libtorch/dist/libtorch/build-hash" ];
+addLibDirs=[ INPUT_DIR."/dist/libtorch/lib" ];
+addMapDeps=[ ["libtorch", ["torch", "torch", "torch", "torch"]], ["torchdep_c10", ["c10", "c10", "c10", "c10"]] ];
+addDependencies=[ "libtorch", "torchdep_c10" ];

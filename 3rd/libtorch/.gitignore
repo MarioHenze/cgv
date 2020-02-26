@@ -5,3 +5,4 @@
 !.gitignore
 !get_prebuilt.ps1
 !libtorch.pj
+!src

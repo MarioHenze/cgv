@@ -6,7 +6,7 @@
 # This is the official URL to get the prebuilt binaries as debug ABI with CUDA.
 # If a release or updated version should be used change this variable.
 # Appropriate URLs can be found on https://pytorch.org/get-started/locally/
-$url = "https://download.pytorch.org/libtorch/cu101/libtorch-win-shared-with-deps-debug-1.4.0.zip"
+$url = "https://download.pytorch.org/libtorch/cpu/libtorch-win-shared-with-deps-debug-1.4.0.zip"
 $zip_file = $PSScriptRoot + "\" + $url.Substring($url.LastIndexOf("/") + 1)
 
 # The script will check if an already downloaded archive is present and skip
@@ -29,10 +29,8 @@ if (-not (Test-Path $zip_file)) {
     Write-Output("Found file {0} already present" -f $zip_file)
 }
 
-# The supplied libtorch zip file has "libtorch" as root folder.
-# If the assumption holds true that the current directory is also "libtorch",
-# cutting the last folder from the script root results in a local extraction
-# of the actual contents.
-$local_target = $PSScriptRoot.Substring(0, $PSScriptRoot.LastIndexOf("\"))
+# To avoid confusion of project source files and distribution files extract
+# them into a separat folder.
+$local_target = $PSScriptRoot + "/dist"
 
 Expand-Archive -Force -LiteralPath $zip_file -DestinationPath $local_target
